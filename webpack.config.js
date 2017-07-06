@@ -15,6 +15,8 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var webpackUglifyJsPlugin = require('webpack-uglify-js-plugin');
 
+var webpack = require('webpack')
+
 
 module.exports = {
     entry: {
@@ -30,14 +32,7 @@ module.exports = {
     // devtool: 'eval-source-map',
      // devtool: 'source-map',
     devtool: 'eval-source-map',
-    devServer: {
-        historyApiFalllback: true,
-        // hot:false,
-        inline: true,
-        progress: true,
-        outputPath: BUILD_PATH,
-        contentBase: "./build",
-    },
+    
     //  devServer: {
     //     contentBase: "./build",
     // }
@@ -64,6 +59,18 @@ module.exports = {
      ]
     },
     plugins: [
+                new webpack.LoaderOptionsPlugin({
+                    options:{
+                        devServer: {
+                            historyApiFalllback: true,
+                            // hot:false,
+                            inline: true,
+                            progress: true,
+                            outputPath: BUILD_PATH,
+                            contentBase: "./build",
+                        },
+                    }
+                }),
     // new CopyWebpackPlugin([{
     //                     from:path.resolve(APP_PATH, 'commons'),
     //                     to:path.resolve(BUILD_PATH, 'commons'),
