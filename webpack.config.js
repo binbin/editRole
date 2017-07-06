@@ -24,18 +24,23 @@ module.exports = {
         path: BUILD_PATH,
         filename: '[name].bundle.js',
         publicPath:'http://localhost:8080/'
+        // publicPath: "/assets/"
     },
     //enable dev source map
     // devtool: 'eval-source-map',
      // devtool: 'source-map',
-     devtool: 'eval-source-map',
+    devtool: 'eval-source-map',
     devServer: {
         historyApiFalllback: true,
         // hot:false,
         inline: true,
         progress: true,
-        outputPath: BUILD_PATH
+        outputPath: BUILD_PATH,
+        contentBase: "./build",
     },
+    //  devServer: {
+    //     contentBase: "./build",
+    // }
     module: {
         loaders: [{
             test: /\.jsx?$/,
