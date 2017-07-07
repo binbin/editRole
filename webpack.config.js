@@ -79,7 +79,13 @@ module.exports = {
     //                     to:path.resolve(BUILD_PATH, 'resources'),
     //               }]),
                   // new ExtractTextPlugin("[name].css"),
-                  new HtmlwebpackPlugin()],
+                  new HtmlwebpackPlugin({
+                    'files':{
+                            "css": [ "main.css" ],
+                        },
+                     template: './index.ejs',
+                    preCss:['http://cdn.amazeui.org/amazeui/2.5.0/css/amazeui.min.css']
+                  })],
                   resolve: {
                       extensions: [ '.js', '.jsx']
                   }

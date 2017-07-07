@@ -7,6 +7,8 @@ import { createStore } from 'redux'
 
 import Home from './components/Home'
 
+import Page from './components/Page'
+
 // import './reset.scss'
 
 
@@ -225,8 +227,12 @@ document.body.appendChild(app)
 
 
 
+// render(<Provider store={store}>
+//     <Home miniBarClick={()=>store.dispatch({type:'HIDE'})&&console.log('click'+(+new Date))}  asideClass={store.getState()} />
+// </Provider>,app)
+
 render(<Provider store={store}>
-    <Home miniBarClick={()=>store.dispatch({type:'HIDE'})&&console.log('click'+(+new Date))}  asideClass={store.getState()} />
+    <Page miniBarClick={()=>store.dispatch({type:'HIDE'})&&console.log('click'+(+new Date))}  asideClass={store.getState()} />
 </Provider>,app)
 
 
