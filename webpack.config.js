@@ -58,6 +58,12 @@ module.exports = {
         {test: /\.png|\.jpe?g|\.gif|\.svg|\.woff|\.woff2|\.ttf|\.eot|\.ico|\.svg$/, loader: 'file?name=fonts/[name].[hash].[ext]?'},
      ]
     },
+    externals:{
+        'react': 'React',
+        'react-dom': 'ReactDOM',
+        'amazeui-touch': 'AMUITouch',
+        'react-addons-css-transition-group':{root:['React', 'addons', 'CSSTransitionGroup']}
+    },
     plugins: [
                 new webpack.LoaderOptionsPlugin({
                     options:{
@@ -79,7 +85,26 @@ module.exports = {
     //                     to:path.resolve(BUILD_PATH, 'resources'),
     //               }]),
                   // new ExtractTextPlugin("[name].css"),
-                  new HtmlwebpackPlugin()],
+                  new HtmlwebpackPlugin({
+                    'files':{
+                            "css": [ "main.css" ],
+                        },
+                     template: './index.ejs',
+                     preScripts:['https://cdn.bootcss.com/react/15.6.1/react-with-addons.min.js','https://cdn.bootcss.com/react/15.6.1/react-dom.min.js','https://unpkg.com/amazeui-touch@1.0.0/dist/amazeui.touch.js'],
+                    preCss:['https://unpkg.com/amazeui-touch@1.0.0/dist/amazeui.touch.min.css']
+                  }),
+                  new webpackUglifyJsPlugin({
+                    cacheFolder: path.resolve(__dirname, 'public/cached_uglify/'),
+                    debug: true,
+                    minimize: true,
+                    sourceMap: false,
+                    output: {
+                      comments: false
+                    },
+                    compressor: {
+                      warnings: false
+                    }
+                  })],
                   resolve: {
                       extensions: [ '.js', '.jsx']
                   }
