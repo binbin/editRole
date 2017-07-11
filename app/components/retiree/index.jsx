@@ -7,7 +7,7 @@ import Home from './Home'
 import Result from './Result'
 
 
-export default class  Page extends React.Component{
+export default class  Retiree extends React.Component{
       constructor(props) {
         super(props);
         this.state = {page:'init',resultData:{}};

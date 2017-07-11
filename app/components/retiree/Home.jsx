@@ -17,7 +17,11 @@ import {
   Modal
 } from 'amazeui-touch';
 
-import { Router, Route, Link, browserHistory } from 'react-router'
+import {
+  HashRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 
 const re_cid=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/
@@ -41,7 +45,7 @@ export default class  Home extends React.Component{
           return (
             <OffCanvas>
               <div>
-                <h3 className="margin">更多内容</h3>
+                <h3 className="margin">功能列表</h3>
                 <List>
                   <List.Item
                     linkComponent={Link}
@@ -49,21 +53,23 @@ export default class  Home extends React.Component{
                       to: `/`,
                       onClick: this.onDismiss,
                     }}
-                    title="组件"
+                    title="首页"
                   />
                   <List.Item
                     linkComponent={Link}
                     linkProps={{
-                      to: '/about',
+                      to: 'retiree',
                       onClick: this.onDismiss,
                     }}
-                    title="关于"
+                    title="退休人员查询"
                   />
                   <List.Item
-                    href="https://github.com/amazeui/amazeui-touch"
-                    title="GitHub"
-                    target="_blank"
-                    onClick={this.onDismiss}
+                    linkComponent={Link}
+                    linkProps={{
+                      to: 'worker',
+                      onClick: this.onDismiss,
+                    }}
+                    title="在职人员查询"
                   />
                 </List>
               </div>
@@ -128,7 +134,7 @@ export default class  Home extends React.Component{
 
       render(){
                 var withOffCanvas = {
-                  title: '个人查询',
+                  title: '退休人员查询',
                   leftNav: [{
                     icon: 'bars',
                     // title: 'Menu',
@@ -137,8 +143,8 @@ export default class  Home extends React.Component{
                     offCanvas: this.renderOC(),
                   }],
                 }
-        return (<View><Container transition="sfl">
-                           <NavBar  {...withOffCanvas} amStyle="primary"/>
+        return (<div>
+                         <NavBar  {...withOffCanvas} amStyle="primary"/>
                             <Group>
                               <Field
                                 label="身份证号"
@@ -155,12 +161,11 @@ export default class  Home extends React.Component{
                               />
                               <Button amStyle="primary" onClick={this.handleButton}>查询</Button>
                             </Group>
-                          </Container>
                           <Modal
                                 ref="loading"
                                 isOpen={this.state.modalOpenStatus}
                                 title= "正在查询中..."
                                 role= "loading"/>
-                          </View>)
+                          </div>)
       }
 }
