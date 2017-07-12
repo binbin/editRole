@@ -18,6 +18,8 @@ import {
   NavBar,
 } from 'amazeui-touch';
 
+import 'whatwg-fetch'
+
 
 export default class  Home extends React.Component{
 	/*render(){
@@ -39,25 +41,27 @@ export default class  Home extends React.Component{
 		                }
 		return (<Container {...this.props}>
 			 <NavBar  {...withOffCanvas} amStyle="primary"/>
-			 <h2>功能索引</h2>
-		            <Grid avg={2} bordered className="sk-icons text-center">
-			    <Col key={1}>
-				<Link to="/retiree" style={{display:'block',color:'#000'}}>
-				    	<Icon name="bars" key={1}></Icon>
-				            <div className="sk-icon-name text-truncate">
-				                   退休查工资
-				            </div>
-				</Link>
-		                </Col>
-		                <Col key={2}>
-		                  	<Link to="/worker" style={{display:'block',color:'#000'}}>
-				    	<Icon name="bars" key={2}></Icon>
-				            <div className="sk-icon-name text-truncate">
-				                   在职查缴费
-				            </div>
-				</Link>
-		                </Col>
-			 </Grid>
+			  <Group style={{paddingLeft:0,paddingRight:0}}>
+			  	 <h2>功能索引</h2>
+			            <Grid avg={2} bordered className="sk-icons text-center">
+				    <Col key={1}>
+					<Link to="/retiree" style={{display:'block',color:'#000'}}>
+					    	<Icon name="bars" key={1}></Icon>
+					            <div className="sk-icon-name text-truncate">
+					                   退休查工资
+					            </div>
+					</Link>
+			                </Col>
+			                <Col key={2}>
+			                  	<Link to="/worker" style={{display:'block',color:'#000'}}>
+					    	<Icon name="bars" key={2}></Icon>
+					            <div className="sk-icon-name text-truncate">
+					                   在职查缴费
+					            </div>
+					</Link>
+			                </Col>
+				 </Grid>
+			  </Group>
 			 
 		</Container>)
 	}

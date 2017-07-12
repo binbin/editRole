@@ -14,7 +14,8 @@ import {
   NavBar,
   OffCanvas,
   OffCanvasTrigger,
-  Modal
+  Modal,
+  Card
 } from 'amazeui-touch';
 
 import {
@@ -143,12 +144,29 @@ export default class  Home extends React.Component{
                     offCanvas: this.renderOC(),
                   }],
                 }
-        return (<div><Container transition="sfl">
-                           <NavBar  {...withOffCanvas} amStyle="primary"/>
-                            <Group>
-                              <div>在职人员查询</div>
-                            </Group>
-                          </Container>
+        return (<div>
+                         <NavBar  {...withOffCanvas} amStyle="primary"/>
+                            <Card title="在职人员自助查询">
+                              <Field
+                                label="身份证号"
+                                placeholder="您的身份证号"
+                                type="text"
+                                ref="cid"
+                              />
+
+                              <Field
+                                label="个人编号"
+                                placeholder="您的个人编号"
+                                type="number"
+                                ref="pid"
+                              />
+                              <Button amStyle="primary" onClick={this.handleButton}>查询</Button>
+                            </Card>
+                            <Card title="关于个人编号">
+                            1、企业参保人员请与所在企业人事联系索取
+                            <br/>
+                            2、灵活就业人员请使用2016年缴费税单上的纳税人编号
+                           </Card>
                           <Modal
                                 ref="loading"
                                 isOpen={this.state.modalOpenStatus}

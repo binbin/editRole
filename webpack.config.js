@@ -36,6 +36,16 @@ module.exports = {
     //  devServer: {
     //     contentBase: "./build",
     // }
+    devServer: {
+        // hot: true,
+        // inline: true,
+        proxy: {
+          '/sto/*': {
+              target: 'http://localhost:18080/',
+              secure: false
+          }
+        }
+    },
     module: {
         loaders: [{
             test: /\.jsx?$/,

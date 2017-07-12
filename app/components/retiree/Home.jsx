@@ -14,7 +14,8 @@ import {
   NavBar,
   OffCanvas,
   OffCanvasTrigger,
-  Modal
+  Modal,
+  Card
 } from 'amazeui-touch';
 
 import {
@@ -97,9 +98,8 @@ export default class  Home extends React.Component{
             modalOpenStatus:true
           })
           var that = this
-          fetch('/sto_search',{
-            method:'GET',
-            body:'cid='+cid+'&pid='+pid
+          fetch('/sto/retiree?cid='+cid+'&pid='+pid,{
+            method:'GET'
           }).then(function(response) {
             return response.json();
           }).then(function(data) {
@@ -145,7 +145,7 @@ export default class  Home extends React.Component{
                 }
         return (<div>
                          <NavBar  {...withOffCanvas} amStyle="primary"/>
-                            <Group>
+                            <Card title="自助查询">
                               <Field
                                 label="身份证号"
                                 placeholder="您的身份证号"
@@ -160,7 +160,10 @@ export default class  Home extends React.Component{
                                 ref="pid"
                               />
                               <Button amStyle="primary" onClick={this.handleButton}>查询</Button>
-                            </Group>
+                            </Card>
+                            <Card title="关于个人编号">
+                            请查看退休证第一页
+                           </Card>
                           <Modal
                                 ref="loading"
                                 isOpen={this.state.modalOpenStatus}
