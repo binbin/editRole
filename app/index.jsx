@@ -33,7 +33,7 @@ import {
 const app = document.createElement('div')
 document.body.className='edit locale-zh-CN product-sxl'
 document.body.id='sites'
-app.setAttribute('style','min-height: 100%;position: relative;')
+app.setAttribute('style','min-height: 100%;position: relative;height: 100%;overflow: auto;')
 document.body.appendChild(app)
 
 // const app document.body

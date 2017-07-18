@@ -145,7 +145,7 @@ export default class  Home extends React.Component{
                 }
         return (<div>
                          <NavBar  {...withOffCanvas} amStyle="primary"/>
-                            <Card title="自助查询">
+                            <Card title="退休人员自助查询">
                               <Field
                                 label="身份证号"
                                 placeholder="您的身份证号"
@@ -154,15 +154,19 @@ export default class  Home extends React.Component{
                               />
 
                               <Field
-                                label="个人编号"
-                                placeholder="您的个人编号"
+                                label="查询口令"
+                                placeholder="您的查询口令"
                                 type="number"
                                 ref="pid"
                               />
                               <Button amStyle="primary" onClick={this.handleButton}>查询</Button>
                             </Card>
-                            <Card title="关于个人编号">
-                            请查看退休证第一页
+                            <Card title="关于查询口令">
+                            1、使用领取养老金银行卡<strong>卡号的后6位</strong>
+                            <br/>
+                            2、也可以使用退休证第一页上面的<strong>个人编号</strong>
+                            <br/>
+                            3、以上条件均不具备的请到<strong>社保局大厅</strong>查询
                            </Card>
                           <Modal
                                 ref="loading"

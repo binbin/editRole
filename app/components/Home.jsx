@@ -19,6 +19,7 @@ import {
 } from 'amazeui-touch';
 
 import 'whatwg-fetch'
+import './table.css'
 
 
 export default class  Home extends React.Component{

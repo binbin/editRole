@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "export NODE_ENV=development & webpack-dev-server  --inline  --progress --profile --colors",
-    "build": "export NODE_ENV=production & BABEL_ENV=production  webpack --progress --profile --colors",
+    "build": "export NODE_ENV=production & BABEL_ENV=production &  webpack -p --define process.env.NODE_ENV='\"production\"' --progress --profile --colors",
     "test": "karma start"
   },
   "author": "",

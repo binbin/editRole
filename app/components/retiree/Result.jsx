@@ -39,13 +39,17 @@ export default class  Result extends React.Component{
           onAction: this.props.onBack,
         };
         let resultData=this.props.resultData
-        return (<View>
-                    <Container  transition="sfr" >
+        if(resultData.reason_for_without_pay=='年审未通过'){
+          resultData.reason_for_without_pay='年审未通过,请到社保局进行年审'
+        }
+        return (
+                    <div>
                         
                           <NavBar {...dataNav} amStyle="primary"/>
                           <Group>
                             <h2>离退休人员基本信息</h2>
                             <table className="am-table am-table-bordered am-table-radius am-table-striped">
+                            <tbody>
                             <tr>
                               <td>姓名</td>
                               <td id="user_name">{resultData.user_name||''}</td>
@@ -98,9 +102,9 @@ export default class  Result extends React.Component{
                               <td>暂停原因</td>
                               <td id="reason_for_without_pay">{resultData.reason_for_without_pay||''}</td>
                             </tr>
+                            </tbody>
                             </table>
                           </Group>
-                  </Container> 
-            </View>)
+            </div>)
       }
 }

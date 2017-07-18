@@ -98,14 +98,13 @@ export default class  Home extends React.Component{
             modalOpenStatus:true
           })
           var that = this
-          fetch('/sto_search',{
-            method:'GET',
-            body:'cid='+cid+'&pid='+pid
+          fetch('/sto/worker?cid='+cid+'&pid='+pid,{
+            method:'GET'
           }).then(function(response) {
             return response.json();
           }).then(function(data) {
             if(data.error&&data.error==1){
-              alert('1、请检查输入 \n 2、请确认您是在我局退休人员')
+              alert('1、请检查输入 \n 2、请确认您是在我局参保人员')
             }else if(data.error&&data.error==2){
               alert('没有查询到可办事项')
             }else if(data.error&&data.error==500){
@@ -155,17 +154,17 @@ export default class  Home extends React.Component{
                               />
 
                               <Field
-                                label="个人编号"
-                                placeholder="您的个人编号"
+                                label="查询口令"
+                                placeholder="您的查询口令"
                                 type="number"
                                 ref="pid"
                               />
                               <Button amStyle="primary" onClick={this.handleButton}>查询</Button>
                             </Card>
-                            <Card title="关于个人编号">
-                            1、企业参保人员请与所在企业人事联系索取
+                            <Card title="关于查询口令">
+                            1、可使用个人编号,企业参保人员请与<strong>所在企业人事</strong>联系索取
                             <br/>
-                            2、灵活就业人员请使用2016年缴费税单上的纳税人编号
+                            2、灵活就业人员请使用<strong>2016年缴费税单</strong>上的<strong>纳税人编号</strong>
                            </Card>
                           <Modal
                                 ref="loading"

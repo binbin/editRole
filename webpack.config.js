@@ -31,7 +31,7 @@ module.exports = {
     //enable dev source map
     // devtool: 'eval-source-map',
      // devtool: 'source-map',
-    devtool: 'eval-source-map',
+    // devtool: 'eval-source-map',
     
     //  devServer: {
     //     contentBase: "./build",
@@ -53,11 +53,11 @@ module.exports = {
             include: [APP_PATH,TEMPLATE_PATH]
         }, {
             test: /\.scss$/,
-            loaders: ['style', 'css?sourceMap', 'sass?sourceMap'],
+            loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap'],
             // loader:ExtractTextPlugin.extract('style', 'css!sass?sourceMap'),
         }, {
             test: /\.css$/,
-            loaders: ['style', 'css?sourceMap'],
+            loaders: ['style-loader', 'css-loader?sourceMap'],
             // loader:ExtractTextPlugin.extract('style', 'css?sourceMap'),
              // 'output-pathinfo': true
         }, 
