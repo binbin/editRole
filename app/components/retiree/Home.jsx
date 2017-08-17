@@ -62,7 +62,7 @@ export default class  Home extends React.Component{
                       to: 'retiree',
                       onClick: this.onDismiss,
                     }}
-                    title="退休人员查询"
+                    title="养老待遇查询"
                   />
                   <List.Item
                     linkComponent={Link}
@@ -70,7 +70,7 @@ export default class  Home extends React.Component{
                       to: 'worker',
                       onClick: this.onDismiss,
                     }}
-                    title="在职人员查询"
+                    title="历年缴费查询"
                   />
                 </List>
               </div>
@@ -134,7 +134,7 @@ export default class  Home extends React.Component{
 
       render(){
                 var withOffCanvas = {
-                  title: '退休人员查询',
+                  title: '养老待遇查询',
                   leftNav: [{
                     icon: 'bars',
                     // title: 'Menu',
@@ -145,7 +145,7 @@ export default class  Home extends React.Component{
                 }
         return (<div>
                          <NavBar  {...withOffCanvas} amStyle="primary"/>
-                            <Card title="退休人员自助查询">
+                            <Card title="养老待遇自助查询">
                               <Field
                                 label="身份证号"
                                 placeholder="您的身份证号"

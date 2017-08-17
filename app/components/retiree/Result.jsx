@@ -42,6 +42,9 @@ export default class  Result extends React.Component{
         if(resultData.reason_for_without_pay=='年审未通过'){
           resultData.reason_for_without_pay='年审未通过,请到社保局进行年审'
         }
+        if(resultData.user_name){
+          resultData.user_name=new Array(resultData.user_name.length-1).join('*')+resultData.user_name.substr(resultData.user_name.length-1)
+        }
         return (
                     <div>
                         
@@ -57,10 +60,6 @@ export default class  Result extends React.Component{
                             <tr>
                               <td>性别</td>
                               <td id="user_sex">{resultData.user_sex||''}</td>
-                            </tr>
-                            <tr>
-                              <td>个人编号</td>
-                              <td id="user_pid">{resultData.user_pid||''}</td>
                             </tr>
                             <tr>
                               <td>身份证号</td>

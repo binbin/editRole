@@ -42,22 +42,22 @@ export default class  Home extends React.Component{
 		                }
 		return (<Container {...this.props}>
 			 <NavBar  {...withOffCanvas} amStyle="primary"/>
-			  <Group style={{paddingLeft:0,paddingRight:0}}>
-			  	 <h2>功能索引</h2>
+			  <Group noPadded >
+			  	 <h2 style={{paddingLeft:20,paddingRight:0,paddingTop:20,paddingBottom:20,margin:0}}>功能索引</h2>
 			            <Grid avg={2} bordered className="sk-icons text-center">
 				    <Col key={1}>
 					<Link to="/retiree" style={{display:'block',color:'#000'}}>
-					    	<Icon name="bars" key={1}></Icon>
+					    	<Icon name="pages" key={1}></Icon>
 					            <div className="sk-icon-name text-truncate">
-					                   退休查工资
+					                   养老待遇查询
 					            </div>
 					</Link>
 			                </Col>
 			                <Col key={2}>
 			                  	<Link to="/worker" style={{display:'block',color:'#000'}}>
-					    	<Icon name="bars" key={2}></Icon>
+					    	<Icon name="list" key={2}></Icon>
 					            <div className="sk-icon-name text-truncate">
-					                   在职查缴费
+					                   历年缴费查询
 					            </div>
 					</Link>
 			                </Col>
