@@ -39,6 +39,7 @@ module.exports = {
     devServer: {
         // hot: true,
         // inline: true,
+        historyApiFallback: true,
         proxy: {
           '/sto/*': {
               target: 'http://localhost:18080/',
