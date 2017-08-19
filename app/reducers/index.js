@@ -1,7 +1,12 @@
 import { combineReducers } from 'redux'
 
-export default function(state = {}, action) {
-  // 这里暂不处理任何 action，
-  // 仅返回传入的 state。
+import Immutable from 'immutable';
+import Cursor from 'immutable/contrib/cursor';
+
+let initialState=Immutable.Map({
+	
+})
+
+export default function(state = initialState, action) {
   return state
 }
