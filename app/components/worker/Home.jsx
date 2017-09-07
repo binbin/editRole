@@ -164,7 +164,7 @@ export default class  Home extends React.Component{
                             <Card title="关于查询口令">
                             1、可使用个人编号,企业参保人员请与<strong>所在企业人事</strong>联系索取
                             <br/>
-                            2、灵活就业人员请使用<strong>2016年缴费税单</strong>上的<strong>纳税人编号</strong>
+                            2、灵活就业人员请使用<strong>2016年缴费税单</strong>上的<strong>纳税人编号后6位</strong>
                            </Card>
                           <Modal
                                 ref="loading"
