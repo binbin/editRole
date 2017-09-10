@@ -101,8 +101,8 @@ module.exports = {
                             "css": [ "main.css" ],
                         },
                      template: './index.ejs',
-                     preScripts:['https://cdn.bootcss.com/react/15.6.1/react-with-addons.min.js','https://cdn.bootcss.com/react/15.6.1/react-dom.min.js','https://unpkg.com/amazeui-touch@1.0.0/dist/amazeui.touch.js'],
-                    preCss:['https://unpkg.com/amazeui-touch@1.0.0/dist/amazeui.touch.min.css']
+                     preScripts:['https://cdn.bootcss.com/react/15.6.1/react-with-addons.min.js','https://cdn.bootcss.com/react/15.6.1/react-dom.min.js','https://npmcdn.com/amazeui-touch@1.0.0-beta.3/dist/amazeui.touch.min.js'],
+                    preCss:['https://npmcdn.com/amazeui-touch@1.0.0-beta.3/dist/amazeui.touch.min.css']
                   }),
                   new webpackUglifyJsPlugin({
                     cacheFolder: path.resolve(__dirname, 'public/cached_uglify/'),
